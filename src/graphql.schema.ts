@@ -9,7 +9,7 @@
 /* eslint-disable */
 
 export interface CreateProductInput {
-    id: string;
+    id?: Nullable<string>;
     name?: Nullable<string>;
     price?: Nullable<number>;
     location_id?: Nullable<number>;
@@ -28,7 +28,7 @@ export interface ISubscription {
 }
 
 export interface Product {
-    id: string;
+    id?: Nullable<string>;
     location_id?: Nullable<string>;
     name?: Nullable<string>;
     price?: Nullable<number>;

@@ -41,6 +41,9 @@ $ npm run start
 # watch mode
 $ npm run start:dev
 
+# Playground
+$ http://localhost:3000/graphql
+
 # production mode
 $ npm run start:prod
 ```

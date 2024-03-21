@@ -1,0 +1,25 @@
+type Query {
+  getProducts(location_id: ID!): [Product]
+}
+
+type Mutation {
+  createProduct(input: CreateProductInput): Product
+}
+
+type Subscription {
+  createdProduct: Product
+}
+
+type Product {
+  id: ID
+  location_id: String
+  name: String
+  price: Int
+}
+
+input CreateProductInput {
+  id: ID
+  name: String
+  price: Int
+  location_id: Int
+}

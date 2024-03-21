@@ -38,11 +38,8 @@ $ npm install
 # development
 $ npm run start
 
-# watch mode
+# development watch mode and auto generate schema
 $ npm run start:dev
-
-# Playground
-$ http://localhost:3000/graphql
 
 # production mode
 $ npm run start:prod
@@ -61,15 +58,61 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## Playground
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### Local address
+http://localhost:3000/graphql
 
-## Stay in touch
+### Query example
+```bash
+query getProducts($location_id: ID!) {
+  getProducts(location_id: $location_id) {
+    id
+    name
+    price
+    location_id
+  }
+}
+```
+#### Query variables
+```bash
+{
+  "location_id": "9999"
+}
+```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### Mutation example
+```bash
+mutation createProduct($input: CreateProductInput) {
+  createProduct(input: $input) {
+    id
+    name
+    price
+    location_id
+  }
+}
+```
+#### Mutation variables
+```bash
+{
+  "id": "12347",
+  "location_id": "9999",
+  "name": "iPhone 15 Pro Max",
+  "price": 2499,
+}
+```
+
+### Subscription example
+```bash
+subscription createdProduct {
+  createdProduct {
+    id
+    name
+    price
+    location_id
+  }
+}
+```
 
 ## License
 
